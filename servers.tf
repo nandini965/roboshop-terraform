@@ -47,7 +47,7 @@ resource "aws_instance" "frontend" {
             Name = "user"
           }
 
-
+        }
 
           resource "aws_instance" "cart" {
             ami           = "ami-0b5a2b5b8f2be4ec2"
