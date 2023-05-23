@@ -6,7 +6,7 @@ resource "aws_instance" "frontend" {
     Name = "frontend"
   }
 
-
+}
 
   resource "aws_instance" "mongodb" {
     ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -16,7 +16,7 @@ resource "aws_instance" "frontend" {
       Name = "mongodb"
     }
 
-
+  }
 
 
     resource "aws_instance" "catalogue" {
@@ -26,6 +26,8 @@ resource "aws_instance" "frontend" {
       tags = {
         Name = "catalogue"
       }
+
+    }
       resource "aws_instance" "redis" {
         ami           = "ami-0b5a2b5b8f2be4ec2"
         instance_type = "t3.small"
@@ -34,7 +36,7 @@ resource "aws_instance" "frontend" {
           Name = "redis"
         }
 
-
+      }
 
 
         resource "aws_instance" "user" {
@@ -55,7 +57,7 @@ resource "aws_instance" "frontend" {
               Name = "cart"
             }
 
-
+          }
 
             resource "aws_instance" "mysql" {
               ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -64,6 +66,7 @@ resource "aws_instance" "frontend" {
               tags = {
                 Name = "mysql"
               }
+            }
 
 
 
@@ -74,7 +77,7 @@ resource "aws_instance" "frontend" {
                 tags = {
                   Name = "shipping"
                 }
-
+              }
 
 
               resource "aws_instance" "rabbitmq" {
@@ -84,6 +87,7 @@ resource "aws_instance" "frontend" {
                 tags = {
                   Name = "rabbitmq"
                 }
+              }
 
                 resource "aws_instance" "payment" {
                   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -92,3 +96,4 @@ resource "aws_instance" "frontend" {
                   tags = {
                     Name = "payment"
                   }
+                }
