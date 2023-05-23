@@ -46,7 +46,6 @@ resource "aws_instance" "frontend" {
           tags = {
             Name = "user"
           }
-
         }
 
           resource "aws_instance" "cart" {
