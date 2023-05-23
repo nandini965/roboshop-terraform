@@ -55,12 +55,14 @@ resource "aws_instance" "frontend" {
               Name = "cart"
             }
 
+
+
             resource "aws_instance" "mysql" {
               ami           = "ami-0b5a2b5b8f2be4ec2"
               instance_type = "t3.small"
 
               tags = {
-                Name = "cart"
+                Name = "mysql"
               }
 
 
@@ -82,6 +84,7 @@ resource "aws_instance" "frontend" {
                 tags = {
                   Name = "rabbitmq"
                 }
+
                 resource "aws_instance" "payment" {
                   ami           = "ami-0b5a2b5b8f2be4ec2"
                   instance_type = "t3.small"
@@ -89,4 +92,3 @@ resource "aws_instance" "frontend" {
                   tags = {
                     Name = "payment"
                   }
-                }
