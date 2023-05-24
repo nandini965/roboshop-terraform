@@ -14,7 +14,7 @@
   }
 }
  resource "aws_route53_record" "frontend" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -31,7 +31,7 @@
     }
   }
  resource "aws_route53_record" "mongodb" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -50,7 +50,7 @@
     }
 
  resource "aws_route53_record" "catalogue" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -82,7 +82,7 @@
           }
         }
  resource "aws_route53_record" "user" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -100,7 +100,7 @@
 
 
  resource "aws_route53_record" "cart" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -118,7 +118,7 @@
               }
             }
  resource "aws_route53_record" "mysql" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -136,7 +136,7 @@
                 }
               }
  resource "aws_route53_record" "shipping" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -153,7 +153,7 @@
                 }
               }
  resource "aws_route53_record" "rabbitmq" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
@@ -169,7 +169,7 @@
                   }
                 }
  resource "aws_route53_record" "payment" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
