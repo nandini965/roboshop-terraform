@@ -161,7 +161,7 @@
  }
 
                 resource "aws_instance" "payment" {
-                  ami           = "data.aws-centos.image_id"
+                  ami           = "data.aws-ami.centos.image_id"
                   instance_type = "t3.small"
 
                   tags = {
