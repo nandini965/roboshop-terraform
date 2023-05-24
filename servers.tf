@@ -65,7 +65,7 @@
         }
       }
  resource "aws_route53_record" "redis" {
-   zone_id = Z03435932ULD0BAV8M7RN
+   zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "frontend-dev.rdevopsb72.store"
    type    = "A"
    ttl     = 30
