@@ -6,8 +6,14 @@ resource "aws_instance" "frontend" {
     Name = "frontend"
   }
 }
-output "frontend" {
-  value = aws_instance.frontend.public_ip
+data "aws_ami" "centos" {
+  owners      = ["973714476881"]
+  most_recent = true
+  name_regex  = "centos-8-Devops-practice"
+}
+
+output "ami" {
+  value = data.aws_ami.centos.image_id
 
 }
 
