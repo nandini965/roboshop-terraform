@@ -5,9 +5,10 @@ resource "aws_instance" "frontend" {
   tags = {
     Name = "frontend"
   }
+}
 output "frontend" {
   value = aws_instance.frontend.public_ip
-}
+
 }
 
   resource "aws_instance" "mongodb" {
