@@ -4,7 +4,7 @@
   most_recent = true
   name_regex  = "Centos-8-DevOps-Practice"
 }
- variable " instance_type" {
+ variable "instance_type" {
    default = "t3.micro"
  }
   resource "aws_instance" "frontend" {
