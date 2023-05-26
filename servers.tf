@@ -56,6 +56,7 @@
    ttl     = 30
    records = [aws_instance.catalogue.private_ip]
  }
+
       resource "aws_instance" "redis" {
         ami           = data.aws_ami.centos.image_id
         instance_type = "t3.small"
