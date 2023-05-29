@@ -7,6 +7,9 @@
  variable "instance_type" {
    default = "t3.micro"
  }
+
+ data "aws_security_group" "allow_all" {
+   name = "allow_all"
   resource "aws_instance" "frontend" {
     ami           = data.aws_ami.centos.image_id
     instance_type = var.instance_type
