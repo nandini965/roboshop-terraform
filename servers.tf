@@ -84,7 +84,7 @@
         resource "aws_instance" "user" {
           ami           = data.aws_ami.centos.image_id
           instance_type = var.instance_type
-          vps_security_group_ids = [ data.aws_security_group.allow-all.id ]
+          vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
           tags = {
             Name = "user"
           }
@@ -119,7 +119,7 @@
             resource "aws_instance" "mysql" {
               ami           = data.aws_ami.centos.image_id
               instance_type = var.instance_type
-              vps_security_group_ids = [ data.aws_security_group.allow-all.id ]
+              vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
 
               tags = {
                 Name = "mysql"
