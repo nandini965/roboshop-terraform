@@ -52,114 +52,114 @@ variable "components" {
    //records = [aws_instance.catalogue.private_ip]
  //}
 
-      resource "aws_instance" "redis" {
-        ami           = data.aws_ami.centos.image_id
-        instance_type = var.instance_type
-        vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
-        tags = {
-         Name = "redis"
-        }
- }
- resource "aws_route53_record" "redis" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "redis-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.redis.private_ip]
- }
+      //resource "aws_instance" "redis" {
+        //ami           = data.aws_ami.centos.image_id
+        //instance_type = var.instance_type
+        //vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
+        //tags = {
+         //Name = "redis"
+        //}
+ //}
+ //resource "aws_route53_record" "redis" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "redis-dev.rdevopsb72.store"
+   //type    = "A"
+   //ttl     = 30
+   //records = [aws_instance.redis.private_ip]
+ //}
 
 
-        resource "aws_instance" "user" {
-          ami           = data.aws_ami.centos.image_id
-          instance_type = var.instance_type
-          vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
-          tags = {
-            Name = "user"
-          }
-        }
- resource "aws_route53_record" "user" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "user-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.user.private_ip]
- }
+   //     resource "aws_instance" "user" {
+     //     ami           = data.aws_ami.centos.image_id
+       //   instance_type = var.instance_type
+         // vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
+          //tags = {
+            //Name = "user"
+          //}
+        //}
+ //resource "aws_route53_record" "user" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "user-dev.rdevopsb72.store"
+   //type    = "A"
+   //ttl     = 30
+   //records = [aws_instance.user.private_ip]
+ //}
 
-          resource "aws_instance" "cart" {
-            ami           = data.aws_ami.centos.image_id
-            instance_type = var.instance_type
-            vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
-            tags = {
-              Name = "cart"
-            }
-          }
-
-
- resource "aws_route53_record" "cart" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "cart-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.cart.private_ip]
- }
+   //       resource "aws_instance" "cart" {
+     //       ami           = data.aws_ami.centos.image_id
+      //      instance_type = var.instance_type
+         //   vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
+        //    tags = {
+        //  Name = "cart"
+           // }
+          //}
 
 
-            resource "aws_instance" "mysql" {
-              ami           = data.aws_ami.centos.image_id
-              instance_type = var.instance_type
-              vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
-
-              tags = {
-                Name = "mysql"
-              }
-            }
- resource "aws_route53_record" "mysql" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "mysql-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.mysql.private_ip]
- }
+ //resource "aws_route53_record" "cart" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "cart-dev.rdevopsb72.store"
+   //type    = "A"
+  // ttl     = 30
+   //records = [aws_instance.cart.private_ip]
+ //}
 
 
+   //         resource "aws_instance" "mysql" {
+     //         ami           = data.aws_ami.centos.image_id
+       //       instance_type = var.instance_type
+            //  vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
 
-              resource "aws_instance" "shipping" {
-                ami           = data.aws_ami.centos.image_id
-                instance_type = var.instance_type
-                vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
-                tags = {
-                  Name = "shipping"
-                }
-              }
- resource "aws_route53_record" "shipping" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "shipping-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.shipping.private_ip]
- }
+            //  tags = {
+              //  Name = "mysql"
+              //}
+            //}
+ //resource "aws_route53_record" "mysql" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "mysql-dev.rdevopsb72.store"
+  // type    = "A"
+   //ttl     = 30
+   //records = [aws_instance.mysql.private_ip]
+ //}
 
 
-              resource "aws_instance" "rabbitmq" {
-                ami           = data.aws_ami.centos.image_id
-                instance_type = var.instance_type
-                vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
-                tags = {
-                  Name = "rabbitmq"
-                }
-              }
- resource "aws_route53_record" "rabbitmq" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "rabbitmq-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.rabbitmq.private_ip]
- }
+
+   //           resource "aws_instance" "shipping" {
+     //           ami           = data.aws_ami.centos.image_id
+       //         instance_type = var.instance_type
+         //       vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
+           //     tags = {
+             //     Name = "shipping"
+               // }
+              //}
+ //resource "aws_route53_record" "shipping" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "shipping-dev.rdevopsb72.store"
+   //type    = "A"
+   //ttl     = 30
+   //records = [aws_instance.shipping.private_ip]
+// }
+
+
+  //            resource "aws_instance" "rabbitmq" {
+    //            ami           = data.aws_ami.centos.image_id
+      //          instance_type = var.instance_type
+        //        vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
+          //      tags = {
+            //      Name = "rabbitmq"
+              //  }
+              //}
+ //resource "aws_route53_record" "rabbitmq" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "rabbitmq-dev.rdevopsb72.store"
+   //type    = "A"
+  // ttl     = 30
+   //records = [aws_instance.rabbitmq.private_ip]
+ //}
 
                 resource "aws_instance" "payment" {
                   ami           = data.aws_ami.centos.image_id
                   instance_type = var.instance_type
-                  vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
+                  vpc_security_group_ids = [ data.aws_security_group.allowall.id ]
 
                   tags = {
                     Name = "payment"
