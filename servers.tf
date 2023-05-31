@@ -6,7 +6,7 @@
 }
 
  data "aws_security_group" "allow-all" {
-   Name = "allow-all"
+   name = "allow-all"
  }
 
   variable "instance_type" {
