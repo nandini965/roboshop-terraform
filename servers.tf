@@ -25,56 +25,40 @@ variable "components" {
     Name = "var.components[count.index]"
   }
 }
- resource "aws_route53_record" "" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "frontend-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.frontend.private_ip]
- }
 
-  resource "aws_instance" "mongodb" {
-    ami           = data.aws_ami.centos.image_id
-    instance_type = var.instance_type
-    vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
-
-    tags = {
-      Name = "mongodb"
-    }
-  }
- resource "aws_route53_record" "mongodb" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "mongodb-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.mongodb.private_ip]
- }
+ //resource "aws_route53_record" "mongodb" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "mongodb-dev.rdevopsb72.store"
+   //type    = "A"
+   //ttl     = 30
+   //records = [aws_instance.mongodb.private_ip]
+ //}
 
 
 
-    resource "aws_instance" "catalogue" {
-      ami           = data.aws_ami.centos.image_id
-      instance_type = var.instance_type
-      vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
-      tags = {
-        Name = "catalogue"
-      }
-    }
+    //resource "aws_instance" "catalogue" {
+      //ami           = data.aws_ami.centos.image_id
+      //instance_type = var.instance_type
+      //vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+      //tags = {
+        //Name = "catalogue"
+      //}
+    //}
 
- resource "aws_route53_record" "catalogue" {
-   zone_id = "Z03435932ULD0BAV8M7RN"
-   name    = "catalogue-dev.rdevopsb72.store"
-   type    = "A"
-   ttl     = 30
-   records = [aws_instance.catalogue.private_ip]
- }
+ //resource "aws_route53_record" "catalogue" {
+   //zone_id = "Z03435932ULD0BAV8M7RN"
+   //name    = "catalogue-dev.rdevopsb72.store"
+   //type    = "A"
+   //ttl     = 30
+   //records = [aws_instance.catalogue.private_ip]
+ //}
 
       resource "aws_instance" "redis" {
         ami           = data.aws_ami.centos.image_id
         instance_type = var.instance_type
         vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
         tags = {
-          Name = "redis"
+         Name = "redis"
         }
  }
  resource "aws_route53_record" "redis" {
