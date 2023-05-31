@@ -38,7 +38,7 @@ variable "components" {
     //resource "aws_instance" "catalogue" {
       //ami           = data.aws_ami.centos.image_id
       //instance_type = var.instance_type
-      //vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+      //vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
       //tags = {
         //Name = "catalogue"
       //}
@@ -55,7 +55,7 @@ variable "components" {
       resource "aws_instance" "redis" {
         ami           = data.aws_ami.centos.image_id
         instance_type = var.instance_type
-        vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+        vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
         tags = {
          Name = "redis"
         }
@@ -72,7 +72,7 @@ variable "components" {
         resource "aws_instance" "user" {
           ami           = data.aws_ami.centos.image_id
           instance_type = var.instance_type
-          vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+          vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
           tags = {
             Name = "user"
           }
@@ -88,7 +88,7 @@ variable "components" {
           resource "aws_instance" "cart" {
             ami           = data.aws_ami.centos.image_id
             instance_type = var.instance_type
-            vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+            vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
             tags = {
               Name = "cart"
             }
@@ -107,7 +107,7 @@ variable "components" {
             resource "aws_instance" "mysql" {
               ami           = data.aws_ami.centos.image_id
               instance_type = var.instance_type
-              vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+              vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
 
               tags = {
                 Name = "mysql"
@@ -126,7 +126,7 @@ variable "components" {
               resource "aws_instance" "shipping" {
                 ami           = data.aws_ami.centos.image_id
                 instance_type = var.instance_type
-                vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+                vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
                 tags = {
                   Name = "shipping"
                 }
@@ -143,7 +143,7 @@ variable "components" {
               resource "aws_instance" "rabbitmq" {
                 ami           = data.aws_ami.centos.image_id
                 instance_type = var.instance_type
-                vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+                vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
                 tags = {
                   Name = "rabbitmq"
                 }
@@ -159,7 +159,7 @@ variable "components" {
                 resource "aws_instance" "payment" {
                   ami           = data.aws_ami.centos.image_id
                   instance_type = var.instance_type
-                  vpc_security_group_ids = [ data.aws_security_group.allow-all.id ]
+                  vpc_security_group_ids = [ data.aws_security_group.allow_all.id ]
 
                   tags = {
                     Name = "payment"
