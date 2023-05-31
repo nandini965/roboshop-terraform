@@ -4,8 +4,8 @@
    most_recent = true
    name_regex  = "Centos-8-DevOps-Practice"
 }
- data "aws_security_group" "allow_all" {
-   name = "allow_all"
+ data "aws_security_group" "allowall" {
+   name = "allowall"
  }
 
   variable "instance_type" {
