@@ -5,7 +5,7 @@
    name_regex  = "Centos-8-DevOps-Practice"
 }
 
- data "aws_security_group" "allow-all" {
+ data aws_security_group "allow-all" {
    name = "allow-all"
  }
 
