@@ -4,7 +4,7 @@
    most_recent = true
    name_regex  = "Centos-8-DevOps-Practice"
 }
- data "aws_security_group" "allowa ll" {
+ data "aws_security_group" "allow_all" {
    name = "allow all"
  }
 
