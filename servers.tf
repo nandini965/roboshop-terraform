@@ -18,7 +18,7 @@ variable "components" {
    count = length(var.components)
    ami           = data.aws_ami.centos.image_id
    instance_type = var.instance_type
-   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+   vpc_security_group_ids = [data.aws_security_group.allowall.id]
 
   tags = {
     Name = "var.components[count.index]"
