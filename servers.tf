@@ -64,6 +64,7 @@ variable "components" {
   }
 }
  resource "aws_route53_record" "records" {
+
    for_each = var.components
    zone_id = "Z03435932ULD0BAV8M7RN"
    name    = "${each.value["name"]}-dev.rdevopsb72.store"
