@@ -63,15 +63,14 @@ variable "components" {
     Name = each.value["name"]
   }
 }
-
- //resource "aws_route53_record" "mongodb" {
-   //zone_id = "Z03435932ULD0BAV8M7RN"
-   //name    = "mongodb-dev.rdevopsb72.store"
-   //type    = "A"
-   //ttl     = 30
-   //records = [aws_instance.mongodb.private_ip]
- //}
-
+ resource "aws_route53_record" "records" {
+   for_each = var.components
+   zone_id = "Z03435932ULD0BAV8M7RN"
+   name    = "${each.value["name"]}-dev.rdevopsb72.store"
+   type    = "A"
+   ttl     = 30
+   records = [aws_instance.instance[each.value["name"]].private_ip]
+ }
 
 
     //resource "aws_instance" "catalogue" {
