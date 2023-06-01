@@ -44,11 +44,11 @@ variable "components" {
     }
     rabbitmq = {
       name = "rabbitmq"
-      instance_type = "t3 small"
+      instance_type = "t3.small"
     }
     payment = {
       name = "payment"
-      instance_type = "t3 small"
+      instance_type = "t3.small"
     }
   }
 }
