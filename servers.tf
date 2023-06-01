@@ -53,7 +53,7 @@ variable "components" {
   }
 }
 
- resource "aws_instance" "instance" {
+ resource "aws_instance" "instances" {
    for_each = var.components
    ami           = data.aws_ami.centos.image_id
    instance_type = each.value["instance_type"]
