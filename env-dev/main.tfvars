@@ -1,5 +1,5 @@
-components = {
-  default = {
+
+  components = {
     frontend = {
       name          = "frontend"
       instance_type = "t3.small"
@@ -41,4 +41,4 @@ components = {
       instance_type = "t3.small"
     }
   }
-}
+env = "dev"
