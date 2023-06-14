@@ -42,7 +42,7 @@
     payment = {
       name          = "payment"
       instance_type = "t3.small"
-      roboshop@1
+      password = "roboshop@1"
     }
   }
 env = "dev"
