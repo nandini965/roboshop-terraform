@@ -14,7 +14,7 @@
 
  resource "null_resource" "provsioner" {
 
-   depends_on = [aws_instance.instance,aws-route53_record.records]
+   depends_on = [aws_instance.instance,aws_route53_record.records]
 
    for_each                  = var.components
    provisioner "remote-exec" {
@@ -23,7 +23,7 @@
        type     = "ssh"
        user     = "centos"
        password = "DevOps321"
-       host     = aws_.instance[each.value["name"]].private_ip
+       host     = aws_instance[each.value["name"]].private_ip
      }
 
      inline = [
