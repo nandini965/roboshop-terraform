@@ -12,7 +12,7 @@
 }
 
 
- resource "null-resource" "provsioner" {
+ resource "null_resource" "provsioner" {
 
    depends_on = [aws_instance.instance,aws-route53_record.records]
 
