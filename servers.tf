@@ -10,6 +10,29 @@
     Name = each.value["name"]
   }
 }
+
+
+ resource "null-resource" "provsioner" {
+   depends_on=[aws_instance,aws-route53_record.records]
+   provisioner "remote-exec" {
+
+     connection {
+       type     = "ssh"
+       user     = "centos"
+       password = "DevOps321"
+       host     = self.private-ip
+     }
+
+     inline = [
+       "rm -rf roboshop-shell",
+       "git clone https://github.com/nandini965/roboshop-shell.git",
+       "cd roboshop-shell",
+       "sudo bash ${each.value["name"]}.sh ${lookup(each.value,"password","null")}"
+     ]
+   }
+ }
+
+
  resource "aws_route53_record" "records" {
 
    for_each = var.components
@@ -19,5 +42,3 @@
    ttl     = 30
    records = [aws_instance.instance[each.value["name"]].private_ip]
  }
-
-
