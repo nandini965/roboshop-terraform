@@ -13,7 +13,8 @@
 
 
  resource "null-resource" "provsioner" {
-   depends_on=[aws_instance,aws-route53_record.records]
+   depends_on = [aws_instance,aws-route53_record.records]
+   for_each   = var.components
    provisioner "remote-exec" {
 
      connection {
