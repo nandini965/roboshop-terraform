@@ -5,7 +5,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [data.aws_security_group.allow-all.id]
 
   tags = {
-    Name = var.env != ""? "${var.componeent_name}_${var.env}" : var.component_name
+    Name = var.env != ""? "${var.component_name}_${var.env}" : var.component_name
   }
 }
 resource "null_resource" "provisioner" {
