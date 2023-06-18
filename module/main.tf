@@ -9,7 +9,7 @@ resource "aws_instance" "instance" {
   }
 }
 resource "null_resource" "provisioner" {
-  depend_on = [aws_instance, aws_route53_record.record]
+  depends_on = [aws_instance, aws_route53_record.record]
   instance_type = var.instance_type
   provisioner "remote-exec" {
 
@@ -23,7 +23,7 @@ resource "null_resource" "provisioner" {
       "rm -rf roboshop-shell",
       "git clone https://github.com/nandini965/roboshop-shell.git",
       "cd roboshop-shell",
-      "sudo bash ${component_name.sh} ${var.password}"
+      "sudo bash ${component_name}.sh ${var.password}"
     ]
   }
 }
