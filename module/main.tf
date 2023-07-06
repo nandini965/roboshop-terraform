@@ -30,6 +30,8 @@ resource "aws_route53_record" "records" {
   ttl     = 30
   records = [aws_instance.instance.private_ip]
 }
+
+
 resource "aws_iam_role" "role" {
   name = "${var.component_name}-${var.env}-role"
 
@@ -49,4 +51,4 @@ resource "aws_iam_role" "role" {
   tags = {
     tag-key = "${var.component_name}-${var.env}-role"
   }
-}]
+}
