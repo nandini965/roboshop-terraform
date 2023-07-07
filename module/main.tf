@@ -77,7 +77,7 @@ resource "aws_iam_role_policy" "ssm-ps-policy" {
     "Action": "ssm:DescribeParameters",
     "Resource": "*"
 
-      },
+      }
     ]
   })
-}
+ }
