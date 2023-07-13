@@ -3,8 +3,8 @@ locals {
   db_commands = [
   "rm -rf roboshop-shell",
   "git clone https://github.com/nandini965/roboshop-shell.git",
-"cd roboshop-shell",
-"sudo bash ${var.component_name}.sh ${var.password}"
+  "cd roboshop-shell",
+  "sudo bash ${var.component_name}.sh ${var.password}"
 ]
   app_commands = [
 "sudo labauto ansible",
