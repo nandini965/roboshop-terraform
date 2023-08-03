@@ -20,4 +20,5 @@ module "app-servers" {
   password = lookup(each.value, "password", "null")
   provisioner = true
   app_type = "app"
+  monitor = "true"
 }
