@@ -18,4 +18,4 @@ locals {
     Monitor = "true"
     component = var.component_name
     env = var.env
-}
+ }
