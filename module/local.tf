@@ -19,3 +19,4 @@ locals {
     component = "var.component_name"
     env       = "var.env"
   }
+}
