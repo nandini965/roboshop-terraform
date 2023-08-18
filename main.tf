@@ -5,4 +5,4 @@ module "vpc" {
   subnets    = each.value["subnets"]
  tags        = local.tags
  env = var.env
-}
+ vpc_id = "var.vpc_id"
