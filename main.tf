@@ -7,3 +7,4 @@ module "vpc" {
  env = var.env
  vpc_id = "var.vpc_id"
  name = "var.name"
+}
