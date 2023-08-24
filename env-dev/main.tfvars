@@ -18,6 +18,7 @@ env = "dev"
         cidr_block = ["10.0.4.0/24", "10.0.5.0/24" ]
         azs        =  ["us-east-1a", "us-east-1b"]
       }
+
       db = {
         name = "db"
         cidr_block = ["10.0.6.0/24", "10.0.7.0/24" ]
@@ -26,3 +27,7 @@ env = "dev"
     }
   }
 }
+
+
+
+
