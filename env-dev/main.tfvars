@@ -33,7 +33,7 @@ app = {
     subnet_name = "web"
   }
   catalogue = {
-    instance_type = t3small
+    instance_type = "t3.small"
     subnet_name = "app"
   }
 }
