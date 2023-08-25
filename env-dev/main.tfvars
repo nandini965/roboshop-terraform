@@ -27,9 +27,9 @@ env = "dev"
     }
   }
 }
-app = {
-  frontend = {
-    instance_type = t3small
+  app = {
+    frontend = {
+    instance_type = "t3.small"
     subnet_name = "web"
   }
   catalogue = {
