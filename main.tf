@@ -5,7 +5,7 @@ module "vpc" {
   subnets    = each.value["subnets"]
  tags        = local.tags
  env = var.env
-  vpc_id = var.vpc_id
+  vpc_id = var.vpc
   azs        = each.value["azs"]
 }
 //module "web" {
