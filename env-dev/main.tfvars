@@ -27,7 +27,7 @@ env = "dev"
     }
   }
 }
-  app = {
+ app = {
     frontend = {
     instance_type = "t3.small"
     subnet_name = "web"
