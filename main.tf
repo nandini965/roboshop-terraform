@@ -5,8 +5,6 @@ module "vpc" {
   subnets    = each.value["subnets"]
  tags        = local.tags
  env = var.env
- vpc_id = "var.vpc_id"
-azs     = "var.azs"
 }
 module "web" {
  source        = "git::https://github.com/nandini965/tf-module-app.git"
