@@ -1,3 +1,3 @@
 variable "env" {}
 variable "vpc" {}
-variable "aPP" {}
+variable "app" {}
