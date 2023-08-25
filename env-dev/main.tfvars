@@ -27,7 +27,16 @@ env = "dev"
     }
   }
 }
-
+app = {
+  frontend = {
+    instance_type = t3small
+    subnet_name = "web"
+  }
+  catalogue = {
+    instance_type = t3small
+    subnet_name = "app"
+  }
+}
 
 
 
