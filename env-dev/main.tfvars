@@ -32,17 +32,17 @@ bastion_cidr = ["172.31.94.29/32"]
     frontend = {
     instance_type = "t3.small"
     subnet_name = "web"
-      min_size             = "2"
-      max_size             = "10"
-      desired_capacity     = "2"
+      min_size             = 2
+      max_size             = 10
+      desired_capacity     = 2
       allow_app_cidr = "public"
   }
   catalogue = {
     instance_type = "t3.small"
     subnet_name = "app"
-    min_size             = "2"
-    max_size             = "10"
-    desired_capacity     = "2"
+    min_size             = 2
+    max_size             = 10
+    desired_capacity     = 2
     allow_app_cidr = "web"
   }
    user = {
