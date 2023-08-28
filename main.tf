@@ -12,7 +12,7 @@ module "vpc" {
   source        = "git::https://github.com/nandini965/tf-module-app.git"
   for_each      = var.app
   instance_type = each.value["instance_type"]
-    name = each.value["instance_type"]
+    name = each.value["name"]
     desired_capacity = each.value["desired_capacity"]
     min_size = each.value["min_size"]
     max_size = each.value["max_size"]
