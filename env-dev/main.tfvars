@@ -46,23 +46,23 @@ vpc = {
     desired_capacity     = 2
     allow_app_cidr = "web"
   }
-   user = {
-     instance_type = "t3.small"
-     subnet_name = "app"
-   }
-   cart = {
-     instance_type = "t3.small"
-     subnet_name = "app"
-   }
-   shipping = {
-     instance_type = "t3.small"
-     subnet_name = "app"
-   }
-   payment = {
-     instance_type = "t3.small"
-     subnet_name = "app"
-   }
-}
+  // user = {
+   //  instance_type = "t3.small"
+     //subnet_name = "app"
+   //}
+   //cart = {
+    // instance_type = "t3.small"
+     //subnet_name = "app"
+   //}
+  // shipping = {
+    // instance_type = "t3.small"
+     //subnet_name = "app"
+   //}
+   //payment = {
+    // instance_type = "t3.small"
+     //subnet_name = "app"
+   //}
+//}
 
 
 
