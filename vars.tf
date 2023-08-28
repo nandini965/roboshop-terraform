@@ -2,3 +2,9 @@ variable "env" {}
 variable "vpc" {}
 variable "app" {}
 variable "bastion_cidr" {}
+variable "name" {}
+variable "desired_capacity" {}
+variable "min_size" {}
+variable "max_size" {}
+variable "allow_app_cidr" {}
+variable "vpc_id" {}
