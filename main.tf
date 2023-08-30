@@ -8,7 +8,7 @@ module "vpc" {
   vpc_id = var.vpc
  azs = "var.azs"
 }
-  module "app" {
+  //module "app" {
     source           = "git::https://github.com/nandini965/tf-module-app.git"
     for_each         = var.app
     instance_type    = each.value["instance_type"]
