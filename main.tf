@@ -6,6 +6,8 @@ module "vpc" {
  tags        = local.tags
  env = var.env
   vpc_id = var.vpc
+  default_vpc_id = var.default_vpc_id
+  default_vpc_id = vardefault_vpc_cidr
 }
   module "app" {
     source           = "git::https://github.com/nandini965/tf-module-app.git"
