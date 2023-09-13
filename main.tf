@@ -8,6 +8,7 @@ module "vpc" {
  vpc_id = var.vpc
   default_vpc_id = var.default_vpc_id
   default_vpc_cidr = var.default_vpc_cidr
+  default_vpc_rtid = var.default_vpc_rtid
 }
   module "app" {
     source           = "git::https://github.com/nandini965/tf-module-app.git"
