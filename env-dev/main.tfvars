@@ -32,26 +32,26 @@ kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79df
     }
   }
 }
- app = {
-   frontend = {
-     name             = "frontend"
-     instance_type    = "t3.small"
-     subnet_name      = "web"
-     desired_capacity = 2
-     max_size         = 10
-     min_size         = 2
-     allow_app_cidr   = "public"
-   }
-   catalogue = {
-     name             = "catalogue"
-     instance_type    = "t3.small"
-     subnet_name      = "app"
-     desired_capacity = 2
-     max_size         = 10
-     min_size         = 2
-     allow_app_cidr   = "web"
-   }
- }
+// app = {
+  // frontend = {
+    // name             = "frontend"
+    // instance_type    = "t3.small"
+    // subnet_name      = "web"
+    // desired_capacity = 2
+    // max_size         = 10
+    // min_size         = 2
+     //allow_app_cidr   = "public"
+  // }
+   //catalogue = {
+    // name             = "catalogue"
+    // instance_type    = "t3.small"
+    // subnet_name      = "app"
+    // desired_capacity = 2
+    // max_size         = 10
+    // min_size         = 2
+    // allow_app_cidr   = "web"
+  // }
+// }
   // user = {
    //  instance_type = "t3.small"
      //subnet_name = "app"
