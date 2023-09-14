@@ -7,5 +7,5 @@ variable "default_vpc_cidr" {}
 variable "default_vpc_rtid" {}
 variable "docdb" {}
 variable "kms_arn" {}
-variable instance_count {}
-variable instance_class {}
+variable "instance_count" {}
+variable "instance_class" {}
