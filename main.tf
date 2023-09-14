@@ -28,7 +28,7 @@ module "vpc" {
 
 
 
-module "docdb" {
+ module "docdb" {
   source = "git::https://github.com/nandini965/tf-module-docdb.git"
 
   for_each       = var.docdb
