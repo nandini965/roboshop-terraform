@@ -74,8 +74,8 @@ docdb = {
     subnet_name = "db"
     allow_app_cidr = "app"
     engine_version = "4.0.0"
-    instance_count = 1
-    instance_class = "db.t3.medium"
+   // instance_count = 1
+    //instance_class = "db.t3.medium"
   }
 }
 

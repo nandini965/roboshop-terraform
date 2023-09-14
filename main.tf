@@ -38,6 +38,6 @@ module "docdb" {
   vpc_id = local.vpc_id
   kms_arn = var.kms_arn
   engine_version = each.value["engine_version"]
-  instance_count = each.value["instance_count"]
-  instance_class = each.value["instance_class"]
+ // instance_count = each.value["instance_count"]
+  //instance_class = each.value["instance_class"]
 }
