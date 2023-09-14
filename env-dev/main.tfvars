@@ -3,7 +3,7 @@ bastion_cidr = ["172.31.94.29/32"]
 default_vpc_id = "vpc-04949aba459233a3b"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-02a1a165ecbd8ef2a"
-kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79dfdda561"
+//kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79dfdda561"
  vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -69,14 +69,14 @@ kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79df
      //subnet_name = "app"
    //}
 //}
-docdb = {
-  main = {
-    subnet_name = "db"
-    allow_db_cidr = "app"
-    engine_version = "4.0.0"
+//docdb = {
+  //main = {
+    //subnet_name = "db"
+    //allow_db_cidr = "app"
+    //engine_version = "4.0.0"
     //instance_count = 1
    // instance_class = "db.t3.medium"
- }
-}
+ //}
+//}
 
 
