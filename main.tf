@@ -45,12 +45,14 @@ module "docdb" {
   kms_arn = var.kms_arn
 }
 
-module "rds" {
-  source = "git::https://github.com/raghudevopsb72/tf-module-rds.git"
 
-  for_each       = var.rds
-  subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
-  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
+
+module "rds" {
+  source = "git::https://github.com/nandini965/tf-module-rds.git"
+
+  for_each       = var.docdb
+  subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
+  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnets_cidrs", null)
   engine_version = each.value["engine_version"]
   instance_count = each.value["instance_count"]
   instance_class = each.value["instance_class"]
@@ -61,6 +63,3 @@ module "rds" {
   vpc_id  = local.vpc_id
   kms_arn = var.kms_arn
 }
-
-
-
