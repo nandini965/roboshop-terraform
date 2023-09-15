@@ -79,4 +79,12 @@ docdb = {
  }
 }
 
-
+rds = {
+  main = {
+    subnet_name = "db"
+    allow_rds_cidr = "app"
+    engine_version = "5.7.mysql_aurora.2.03.2"
+    instance_count = 1
+    instance_class     = "db.t3.small"
+  }
+}
