@@ -69,20 +69,20 @@ app = {
      //subnet_name = "app"
    //}
 //}
-//docdb = {
- // main = {
- //   subnet_name = "db"
-  //  allow_db_cidr = "app"
- //  engine_version = "4.0.0"
-   //instance_count = 1
-   // instance_class     = "db.t3.medium"
-// }
-//}
+docdb = {
+  main = {
+    subnet_name = "db"
+    allow_db_cidr = "app"
+   engine_version = "4.0.0"
+   instance_count = 1
+    instance_class     = "db.t3.medium"
+ }
+}
 
 rds = {
   main = {
     subnet_name = "db"
-    allow_rds_cidr = "app"
+    allow_db_cidr = "app"
     engine_version = "5.7.mysql_aurora.2.11.2"
     instance_count = 1
     instance_class = "db.t3.small"
