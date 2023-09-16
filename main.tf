@@ -81,7 +81,7 @@ module "elasticache" {
   kms_arn = var.kms_arn
 }
 module "rabbitmq" {
-  source = "git::https://github.com/nandini965/tf-module-amazon-mq.git"
+  source = "git::https://github.com/nandini965/tf-module-amazonmq.git"
 
   for_each       = var.rabbitmq
   subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
