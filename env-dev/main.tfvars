@@ -100,7 +100,8 @@ elasticache = {
 }
 rabbitmq = {
   main = {
-    subnet_name = "db"
+    subnet_name   = "db"
     allow_db_cidr = "app"
     instance_type = "t3.small"
   }
+}
