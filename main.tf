@@ -94,7 +94,7 @@ module "rabbitmq" {
   bastion_cidr = var.bastion_cidr
 }
 module "alb" {
- source = "git::https://github.com/raghudevopsb72/tf-module-alb.git"
+ source = "git::https://github.com/nandini965/tf-module-alb.git"
 
   for_each       = var.alb
   subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnet_ids", null)
