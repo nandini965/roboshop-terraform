@@ -49,7 +49,7 @@ app = {
      desired_capacity = 2
      max_size         = 10
      min_size         = 2
-     allow_app_cidr   = "web"
+     allow_app_cidr   = "app"
    }
  }
   //user = {
