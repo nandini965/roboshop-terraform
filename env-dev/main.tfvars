@@ -111,11 +111,13 @@ alb = {
     subnet_name = "public"
     allow_alb_cidr = "null"
     internal = false
+    azs = ["us-east-1a"]
   }
   private = {
     name = "private"
     subnet_name = "app"
     allow_alb_cidr = "web"
     internal = true
+    azs = ["us-east-1b"]
   }
 }
