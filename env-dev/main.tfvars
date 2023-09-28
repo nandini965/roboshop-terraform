@@ -50,7 +50,7 @@ app = {
      desired_capacity = 1
      max_size         = 10
      min_size         = 1
-     allow_app_cidr   = "app"
+     allow_app_cidr   = "web"
 
    }
  }
