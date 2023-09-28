@@ -11,7 +11,7 @@ module "vpc" {
   default_vpc_rtid = var.default_vpc_rtid
 }
  module "app" {
-   depends_on [module.vpc, module.docdb,module.rds, module.elasticache, module.rabbitmq, module.alb]
+   depends_on = [module.vpc, module.docdb,module.rds, module.elasticache, module.rabbitmq, module.alb]
     source           = "git::https://github.com/nandini965/tf-module-app.git"
     for_each         = var.app
     instance_type    = each.value["instance_type"]
