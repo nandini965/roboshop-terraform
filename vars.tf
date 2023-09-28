@@ -11,4 +11,5 @@ variable "rds" {}
 variable "elasticache" {}
 variable "rabbitmq" {}
 variable "alb" {}
+variable "app_port" {}
 
