@@ -41,7 +41,7 @@ app = {
      max_size         = 10
      min_size         = 1
      allow_app_cidr   = "public"
-     app_port = 80
+     app_port         = 80
 
    }
    catalogue = {
@@ -52,7 +52,7 @@ app = {
      max_size         = 10
      min_size         = 1
      allow_app_cidr   = "web"
-     app_port = 8080
+     app_port        = 8080
 
 
    }

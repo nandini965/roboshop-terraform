@@ -19,7 +19,7 @@ module "app" {
     desired_capacity = each.value["desired_capacity"]
     min_size         = each.value["min_size"]
     max_size         = each.value["max_size"]
-   app_port           = each.value["app_port"]
+    app_port         = each.value["app_port"]
     env              = var.env
     bastion_cidr     = var.bastion_cidr
     tags = local.tags
