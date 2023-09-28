@@ -41,7 +41,7 @@ app = {
      max_size         = 10
      min_size         = 1
      allow_app_cidr   = "public"
-     lb_type = "public"
+
    }
    catalogue = {
      name             = "catalogue"
@@ -51,7 +51,7 @@ app = {
      max_size         = 10
      min_size         = 1
      allow_app_cidr   = "app"
-     lb_type = "private"
+
    }
  }
   //user = {
