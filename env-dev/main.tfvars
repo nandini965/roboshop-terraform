@@ -37,19 +37,21 @@ app = {
      name             = "frontend"
      instance_type    = "t3.small"
      subnet_name      = "web"
-     desired_capacity = 2
+     desired_capacity = 1
      max_size         = 10
-     min_size         = 2
+     min_size         = 1
      allow_app_cidr   = "public"
+     lb_type = "public"
    }
    catalogue = {
      name             = "catalogue"
      instance_type    = "t3.small"
      subnet_name      = "app"
-     desired_capacity = 2
+     desired_capacity = 1
      max_size         = 10
-     min_size         = 2
+     min_size         = 1
      allow_app_cidr   = "app"
+     lb_type = "private"
    }
  }
   //user = {
