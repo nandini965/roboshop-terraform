@@ -20,7 +20,6 @@ module "app" {
     min_size         = each.value["min_size"]
     max_size         = each.value["max_size"]
     app_port         = each.value["app_port"]
-    listener_arn     = each.value["listener_arn"]
   listener_priority = each.value["listener_priority"]
     env              = var.env
     bastion_cidr     = var.bastion_cidr
