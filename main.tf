@@ -27,7 +27,7 @@ module "app" {
     domain_name      = var.domain_name
     domain_id        = var.domain_id
 
-    tags = local.tags
+    tags             = local.tags
     subnet_ids       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
     vpc_id           = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
     allow_app_cidr   = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnets_cidrs", null)
