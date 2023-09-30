@@ -4,6 +4,8 @@ default_vpc_id = "vpc-04949aba459233a3b"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-02a1a165ecbd8ef2a"
 kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79dfdda561"
+domain_name = rdevopsb72.store
+domain_id =
  vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -42,6 +44,9 @@ app = {
      min_size         = 1
      allow_app_cidr   = "public"
      app_port         = 80
+     listener_priority  = 1
+     dns_name = "dev"
+
    }
    catalogue = {
      name             = "catalogue"
@@ -51,8 +56,10 @@ app = {
      max_size         = 10
      min_size         = 1
      allow_app_cidr   = "web"
-     app_port        = 8080
-
+     app_port         = 8080
+    listener_priority = 1
+    dns_name = "dev"
+    lb_type = "private"
 
    }
  }

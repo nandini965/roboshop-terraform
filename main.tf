@@ -20,12 +20,20 @@ module "app" {
     min_size         = each.value["min_size"]
     max_size         = each.value["max_size"]
     app_port         = each.value["app_port"]
+    listener_arn     = each.value["listener_arn"]
+  listener_priority = each.value["listener_priority"]
     env              = var.env
     bastion_cidr     = var.bastion_cidr
+    domain_name      = var.domain_name
+    domain_id        = var.domain_id
+
     tags = local.tags
     subnet_ids       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
-    vpc_id          = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
+    vpc_id           = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
     allow_app_cidr   = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnets_cidrs", null)
+    listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
+    lb_dns_name    = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
+   dns_name = each.value["name"] == "frontend" ? each.value["dns_name"] : "${each.value["name"]}-${var.env}"
  }
 
 
@@ -58,6 +66,7 @@ module "rds" {
   engine_version = each.value["engine_version"]
   instance_count = each.value["instance_count"]
   instance_class = each.value["instance_class"]
+ dns_name = each.value["name"] == "frontend" ? each.value["dns_name"] : "${each.value["name"]}-${var.env}"
 
 
   tags    = local.tags
