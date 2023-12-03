@@ -58,7 +58,7 @@ app = {
      allow_app_cidr   = "web"
      app_port         = 8080
     //listener_priority = 1
-    //dns_name = "dev"
+    //dns_name = "dev" #
     //lb_type = "private"
 
    }
