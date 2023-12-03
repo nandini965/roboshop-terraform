@@ -1,12 +1,12 @@
 env = "dev"
 bastion_cidr = ["172.31.94.29/32"]
-default_vpc_id = "vpc-04949aba459233a3b"
+default_vpc_id = "vpc-00ca3af765ccd461b"
 default_vpc_cidr = "172.31.0.0/16"
-default_vpc_rtid = "rtb-02a1a165ecbd8ef2a"
+default_vpc_rtid = "rtb-08bef8c259931766c"
 //kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79dfdda561"
 kms_arn = "arn:aws:kms:us-east-1:132179088792:key/bb370d35-f4ca-4626-b6db-93699061c03b"
-//domain_name = rdevopsb72.store
-//domain_id = "Z09580212QMC2G5J17GZ1"
+domain_name = rdevopsb72.store
+domain_id = "Z09580212QMC2G5J17GZ1"
  vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -45,8 +45,8 @@ app = {
      min_size         = 1
      allow_app_cidr   = "public"
      app_port         = 80
-    // listener_priority  = 1
-    // dns_name = "dev"
+     listener_priority  = 1
+     dns_name = "dev"
 
    }
    catalogue = {
@@ -58,9 +58,9 @@ app = {
      min_size         = 1
      allow_app_cidr   = "web"
      app_port         = 8080
-    //listener_priority = 1
-    //dns_name = "dev" #
-    //lb_type = "private"
+    listener_priority = 1
+    dns_name = "dev" #
+    lb_type = "private"
 
    }
  }
