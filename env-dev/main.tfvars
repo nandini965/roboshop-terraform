@@ -5,8 +5,8 @@ default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-08bef8c259931766c"
 //kms_arn = "arn:aws:kms:us-east-1:121558927746:key/e4d7c861-f016-44b5-8edd-3e79dfdda561"
 //kms_arn = "arn:aws:kms:us-east-1:132179088792:key/bb370d35-f4ca-4626-b6db-93699061c03b"
-domain_name = rdevopsb72.store
-domain_id = "Z09580212QMC2G5J17GZ1"
+//domain_name = rdevopsb72.store
+//domain_id = "Z09580212QMC2G5J17GZ1"
  vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -35,35 +35,35 @@ domain_id = "Z09580212QMC2G5J17GZ1"
     }
   }
 }
-app = {
-   frontend = {
-     name             = "frontend"
-     instance_type    = "t3.small"
-     subnet_name      = "web"
-     desired_capacity = 1
-     max_size         = 10
-     min_size         = 1
-     allow_app_cidr   = "public"
-     app_port         = 80
-     listener_priority  = 1
-     dns_name = "dev"
-
-   }
-   catalogue = {
-     name             = "catalogue"
-     instance_type    = "t3.small"
-     subnet_name      = "app"
-     desired_capacity = 1
-     max_size         = 10
-     min_size         = 1
-     allow_app_cidr   = "web"
-     app_port         = 8080
-    listener_priority = 1
-    dns_name = "dev" #
-    lb_type = "private"
-
-   }
- }
+#app = {
+#   frontend = {
+#     name             = "frontend"
+#     instance_type    = "t3.small"
+#     subnet_name      = "web"
+#     desired_capacity = 1
+#     max_size         = 10
+#     min_size         = 1
+#     allow_app_cidr   = "public"
+#     app_port         = 80
+#     listener_priority  = 1
+#     dns_name = "dev"
+#
+#   }
+#   catalogue = {
+#     name             = "catalogue"
+#     instance_type    = "t3.small"
+#     subnet_name      = "app"
+#     desired_capacity = 1
+#     max_size         = 10
+#     min_size         = 1
+#     allow_app_cidr   = "web"
+#     app_port         = 8080
+#    listener_priority = 1
+#    dns_name = "dev" #
+#    lb_type = "private"
+#
+#   }
+# }
   //user = {
     //instance_type = "t3.small"
      //subnet_name = "app"
@@ -118,17 +118,17 @@ rabbitmq = {
   }
 }
 
-alb = {
-  public = {
-    name           = "public"
-    subnet_name    = "public"
-    allow_alb_cidr = null
-    internal       = false
-  }
-  private = {
-    name           = "private"
-    subnet_name    = "app"
-    allow_alb_cidr = "web"
-    internal       = true
-  }
-}
+#alb = {
+#  public = {
+#    name           = "public"
+#    subnet_name    = "public"
+#    allow_alb_cidr = null
+#    internal       = false
+#  }
+#  private = {
+#    name           = "private"
+#    subnet_name    = "app"
+#    allow_alb_cidr = "web"
+#    internal       = true
+#  }
+#}

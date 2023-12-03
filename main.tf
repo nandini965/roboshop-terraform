@@ -10,30 +10,30 @@ module "vpc" {
   default_vpc_cidr = var.default_vpc_cidr
   default_vpc_rtid = var.default_vpc_rtid
 }
-module "app" {
-  depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
-    source           = "git::https://github.com/nandini965/tf-module-app.git"
-    for_each         = var.app
-    instance_type    = each.value["instance_type"]
-   name             = each.value["name"]
-    desired_capacity = each.value["desired_capacity"]
-    min_size         = each.value["min_size"]
-    max_size         = each.value["max_size"]
-    app_port         = each.value["app_port"]
-  listener_priority = each.value["listener_priority"]
-    env              = var.env
-    bastion_cidr     = var.bastion_cidr
-    domain_name      = var.domain_name
-    domain_id        = var.domain_id
-
-   tags             = local.tags
-    subnet_ids       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
-   vpc_id           = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
-    allow_app_cidr   = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnets_cidrs", null)
-    listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
-    lb_dns_name    = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
-   dns_name = each.value["name"] == "frontend" ? each.value["dns_name"] : "${each.value["name"]}-${var.env}"
- }
+#module "app" {
+#  depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
+#    source           = "git::https://github.com/nandini965/tf-module-app.git"
+#    for_each         = var.app
+#    instance_type    = each.value["instance_type"]
+#   name             = each.value["name"]
+#    desired_capacity = each.value["desired_capacity"]
+#    min_size         = each.value["min_size"]
+#    max_size         = each.value["max_size"]
+#    app_port         = each.value["app_port"]
+#  listener_priority = each.value["listener_priority"]
+#    env              = var.env
+#    bastion_cidr     = var.bastion_cidr
+#    domain_name      = var.domain_name
+#    domain_id        = var.domain_id
+#
+#   tags             = local.tags
+#    subnet_ids       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
+#   vpc_id           = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
+#    allow_app_cidr   = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnets_cidrs", null)
+#    listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
+#    lb_dns_name    = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
+#   dns_name = each.value["name"] == "frontend" ? each.value["dns_name"] : "${each.value["name"]}-${var.env}"
+# }
 
 
 
@@ -103,16 +103,16 @@ module "rabbitmq" {
   bastion_cidr = var.bastion_cidr
 }
 
-module "alb" {
- source = "git::https://github.com/nandini965/tf-module-alb.git"
-
-  for_each       = var.alb
-  subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
-  allow_alb_cidr = each.value["name"] == "public" ? ["0.0.0.0/0"] : lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_alb_cidr"], null), "subnet_cidrs", null)
-  name           = each.value["name"]
-  internal       = each.value["internal"]
-
-  tags   = local.tags
-  env    = var.env
-  vpc_id = local.vpc_id
-}
+#module "alb" {
+# source = "git::https://github.com/nandini965/tf-module-alb.git"
+#
+#  for_each       = var.alb
+#  subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
+#  allow_alb_cidr = each.value["name"] == "public" ? ["0.0.0.0/0"] : lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_alb_cidr"], null), "subnet_cidrs", null)
+#  name           = each.value["name"]
+#  internal       = each.value["internal"]
+#
+#  tags   = local.tags
+#  env    = var.env
+#  vpc_id = local.vpc_id
+#}
