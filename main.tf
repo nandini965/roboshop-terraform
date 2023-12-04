@@ -66,6 +66,7 @@ module "app" {
   domain_id    = var.domain_id
   kms_arn      = var.kms_arn
 
+
 }
 
 module "docdb" {
@@ -147,8 +148,8 @@ module "alb" {
   tags   = local.tags
   env    = var.env
   vpc_id = local.vpc_id
-  domain_name  = var.domain_name
   domain_id    = var.domain_id
+  dns_name = var.dns_name
 
 
 }
