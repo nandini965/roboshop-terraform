@@ -65,6 +65,7 @@ module "app" {
   domain_name  = var.domain_name
   domain_id    = var.domain_id
   kms_arn      = var.kms_arn
+  monitor_cidr = var.monitor_cidr
 
 
 }
