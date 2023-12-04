@@ -1,6 +1,6 @@
 locals {
   vpc_id = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
-  tags = {
+  tags   = {
     business_unit = "ecommerce"
     business_type = "retail"
     project_name  = "roboShop"
