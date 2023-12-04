@@ -65,6 +65,7 @@ app = {
   }
 
   user = {
+    name = "user"
     instance_type = "t3.small"
      subnet_name = "app"
     allow_app_cidr    = "app"
@@ -78,6 +79,7 @@ app = {
   }
 
    cart = {
+     name = "cart"
      instance_type     = "t3.small"
      subnet_name       = "app"
      allow_app_cidr    = "app"
@@ -91,6 +93,7 @@ app = {
    }
 
   shipping = {
+    name = "shipping"
     instance_type = "t3.small"
     subnet_name = "app"
     allow_app_cidr    = "app"
@@ -104,6 +107,7 @@ app = {
  }
 
    payment = {
+     name = "payment"
      instance_type = "t3.small"
      subnet_name = "app"
      allow_app_cidr    = "app"
