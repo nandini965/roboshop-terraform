@@ -46,6 +46,7 @@ app = {
      app_port         = 80
      listener_priority  = 1
      dns_name = "dev"
+     lb_type = private
      parameters    = []
 
    }
