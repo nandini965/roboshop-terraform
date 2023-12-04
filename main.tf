@@ -143,7 +143,7 @@ module "alb" {
   allow_alb_cidr = each.value["name"] == "public" ? ["0.0.0.0/0"] : lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_alb_cidr"], null), "subnet_cidrs", null)
   name           = each.value["name"]
   internal       = each.value["internal"]
-  listener_priority = each.value["listener_priority"]
+  //listener_priority = each.value["listener_priority"]
   dns_name = each.value["name"] == "frontend" ? each.value["dns_name"] : "${each.value["name"]}-${var.env}"
 
 
