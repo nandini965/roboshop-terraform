@@ -47,7 +47,7 @@ app = {
     listener_priority = 1
     lb_type           = "public"
     parameters        = []
-    dns_name = "dev"
+    dns_name          = "dev"
   }
   catalogue = {
     name              = "catalogue"
@@ -57,29 +57,66 @@ app = {
     desired_capacity  = 1
     max_size          = 10
     min_size          = 1
-    app_port          = 8080
+    app_port          = 80
     listener_priority = 1
     lb_type           = "private"
     parameters        = ["docdb"]
   }
 }
-  //user = {
-    //instance_type = "t3.small"
-     //subnet_name = "app"
-   //}
-   //cart = {
-     //instance_type = "t3.small"
-     //subnet_name = "app"
-   //}
-  //shipping = {
-   // instance_type = "t3.small"
-    // subnet_name = "app"
-   //}
-   //payment = {
-    // instance_type = "t3.small"
-     //subnet_name = "app"
-   //}
-//}
+
+  user = {
+    instance_type = "t3.small"
+     subnet_name = "app"
+    allow_app_cidr    = "app"
+    desired_capacity  = 1
+    max_size          = 10
+    min_size          = 1
+    app_port          = 80
+    listener_priority = 1
+    lb_type           = "private"
+    parameters        = ["docdb"]
+  }
+   }
+   cart = {
+     instance_type = "t3.small"
+     subnet_name = "app"
+     allow_app_cidr    = "app"
+     desired_capacity  = 1
+     max_size          = 10
+     min_size          = 1
+     app_port          = 80
+     listener_priority = 1
+     lb_type           = "private"
+     parameters        = []
+   }
+   }
+  shipping = {
+    instance_type = "t3.small"
+     subnet_name = "app"
+    allow_app_cidr    = "app"
+    desired_capacity  = 1
+    max_size          = 10
+    min_size          = 1
+    app_port          = 80
+    listener_priority = 1
+    lb_type           = "private"
+   parameters        = ["rds"]
+ }
+   }
+   payment = {
+     instance_type = "t3.small"
+     subnet_name = "app
+     allow_app_cidr    = "app"
+     desired_capacity  = 1
+    max_size          = 10
+    min_size          = 1
+    app_port          = 8080
+    listener_priority = 1
+    lb_type           = "private"
+    parameters        = []
+ }
+   }
+}
 docdb = {
   main = {
     subnet_name = "db"
@@ -87,6 +124,7 @@ docdb = {
    engine_version = "4.0.0"
    instance_count = 1
     instance_class     = "db.t3.medium"
+
  }
 }
 
@@ -114,6 +152,7 @@ rabbitmq = {
     subnet_name   = "db"
     allow_db_cidr = "app"
     instance_type = "t3.small"
+    domain_id = var.domain_id
   }
 }
 
