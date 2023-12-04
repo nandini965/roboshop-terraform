@@ -47,6 +47,7 @@ app = {
     listener_priority = 1
     lb_type           = "public"
     parameters        = []
+    dns_name = "dev"
   }
   catalogue = {
     name              = "catalogue"
