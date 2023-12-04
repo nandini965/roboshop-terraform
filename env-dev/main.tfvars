@@ -60,7 +60,7 @@ app = {
      app_port         = 8080
     listener_priority = 1
     dns_name = "dev" #
-    lb_type = "privoate"
+    lb_type = "private"
      parameters = ["docdb"]
 
    }
