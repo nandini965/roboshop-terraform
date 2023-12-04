@@ -25,6 +25,7 @@ module "app" {
     bastion_cidr     = var.bastion_cidr
     domain_name      = var.domain_name
     domain_id        = var.domain_id
+  kms_arn = var.kms_arn
 
    tags             = local.tags
     subnet_ids       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
