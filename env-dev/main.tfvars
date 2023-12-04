@@ -63,7 +63,6 @@ app = {
     lb_type           = "private"
     parameters        = ["docdb"]
   }
-}
 
   user = {
     instance_type = "t3.small"
@@ -77,10 +76,10 @@ app = {
     lb_type           = "private"
     parameters        = ["docdb"]
   }
-   }
+
    cart = {
-     instance_type = "t3.small"
-     subnet_name = "app"
+     instance_type     = "t3.small"
+     subnet_name       = "app"
      allow_app_cidr    = "app"
      desired_capacity  = 1
      max_size          = 10
@@ -90,10 +89,10 @@ app = {
      lb_type           = "private"
      parameters        = []
    }
-   }
+
   shipping = {
     instance_type = "t3.small"
-     subnet_name = "app"
+    subnet_name = "app"
     allow_app_cidr    = "app"
     desired_capacity  = 1
     max_size          = 10
@@ -103,10 +102,10 @@ app = {
     lb_type           = "private"
    parameters        = ["rds"]
  }
-   }
+
    payment = {
      instance_type = "t3.small"
-     subnet_name = "app
+     subnet_name = "app"
      allow_app_cidr    = "app"
      desired_capacity  = 1
     max_size          = 10
@@ -116,7 +115,7 @@ app = {
     lb_type           = "private"
     parameters        = []
  }
-   }
+
 }
 docdb = {
   main = {
