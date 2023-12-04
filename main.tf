@@ -20,12 +20,14 @@ module "app" {
     min_size         = each.value["min_size"]
     max_size         = each.value["max_size"]
     app_port         = each.value["app_port"]
+  parameters         = each.value["parameters"]
   listener_priority = each.value["listener_priority"]
     env              = var.env
     bastion_cidr     = var.bastion_cidr
     domain_name      = var.domain_name
     domain_id        = var.domain_id
-  kms_arn = var.kms_arn
+    kms_arn = var.kms_arn
+
 
    tags             = local.tags
     subnet_ids       = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
