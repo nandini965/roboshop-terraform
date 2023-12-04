@@ -25,6 +25,7 @@ module "app" {
     bastion_cidr     = var.bastion_cidr
     domain_name      = var.domain_name
     domain_id        = var.domain_id
+  parameters        = each.value["parameters"]
     kms_arn = var.kms_arn
 
 
