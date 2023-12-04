@@ -46,7 +46,7 @@ app = {
      app_port         = 80
      listener_priority  = 1
      dns_name = "dev"
-     parameter     = []
+     parameters    = []
 
    }
    catalogue = {
@@ -61,7 +61,7 @@ app = {
     listener_priority = 1
     dns_name = "dev" #
     lb_type = "privoate"
-     parameter = ["docdb"]
+     parameters = ["docdb"]
 
    }
  }
