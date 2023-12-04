@@ -6,7 +6,7 @@ default_vpc_rtid = "rtb-08bef8c259931766c"
 kms_arn = "arn:aws:kms:us-east-1:132179088792:key/ede7aa6b-ba36-497f-8811-1a4e2b338294"
 domain_name = "rdevopsb72.store"
 domain_id = "Z0321851320OIGMG455PE"
-monitor_cidr = ["172.31.38.155"/32]
+monitor_cidr = ["172.31.38.155/32"]
  vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -152,7 +152,6 @@ rabbitmq = {
     subnet_name   = "db"
     allow_db_cidr = "app"
     instance_type = "t3.small"
-    domain_id = var.domain_id
   }
 }
 
