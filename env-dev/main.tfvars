@@ -40,7 +40,7 @@ app = {
     name              = "frontend"
     instance_type     = "t3.small"
     subnet_name       = "web"
-    allow_app_cidr    = "app"
+    allow_app_cidr    = "public"
     desired_capacity  = 1
     max_size          = 10
     min_size          = 1
@@ -123,7 +123,7 @@ app = {
 }
 docdb = {
   main = {
-    subnet_name = "db"
+    subnet_name = "app"
     allow_db_cidr = "app"
    engine_version = "4.0.0"
    instance_count = 1
