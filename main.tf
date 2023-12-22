@@ -28,7 +28,7 @@ module "app" {
 
   subnet_ids     = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
   vpc_id         = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
-  allow_app_cidr = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnet_cidrs", null)
+  allow_app_cidr = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_app_cidr"], null), "subnets_cidr", null)
   listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
   lb_dns_name    = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
 
@@ -48,7 +48,7 @@ module "docdb" {
 
  for_each       = var.docdb
   subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
-  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnet_cidrs", null)
+  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnets_cidr", null)
   engine_version = each.value["engine_version"]
   instance_count = each.value["instance_count"]
    instance_class = each.value["instance_class"]
