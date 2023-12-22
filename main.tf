@@ -85,7 +85,7 @@ module "elasticache" {
 
   for_each       = var.elasticache
   subnets        = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["subnet_name"], null), "subnets_ids", null)
-  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnets_cidr", null)
+  allow_db_cidr  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), each.value["allow_db_cidr"], null), "subnets_cidrs", null)
   engine_version = each.value["engine_version"]
   num_node_groups = each.value["num_node_groups"]
   node_type = each.value["node_type"]
