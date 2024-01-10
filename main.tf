@@ -139,5 +139,6 @@ instance_type = "t3.medium"
 vpc_security_group_ids = [ "sg-02691251d365e72f0" ]
 tags = {
 Name = "load-runner"
+  env = "prod"
   }
 }
