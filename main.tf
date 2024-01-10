@@ -127,14 +127,14 @@ module "alb" {
   domain_id    = var.domain_id
 }
 
-data "aws_ami" "ami" {
+data "aws_ami" "load" {
   most_recent = true
   name_regex = "Centos-8-DevOps-practice"
   owners = ["973714476881"]
 }
 
 resource "aws_instance" "load" {
-ami = data.aws_ami.ami.id
+ami = data.aws_ami.load.id
 instance_type = "t3.medium"
 vpc_security_group_ids = ["sg-02691251d365e72f0"]
 tags = {
