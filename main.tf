@@ -13,7 +13,6 @@ module "vpc" {
 
 module "app" {
   depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
-#  source     = "git::https://github.com/raghudevopsb72/tf-module-app.git"
   source           = "git::https://github.com/nandini965/tf-module-app.git"
   for_each          = var.app
   instance_type     = each.value["instance_type"]
