@@ -14,6 +14,6 @@ variable "default_vpc_rtid" {}
 //variable "domain_name" {}
 //variable "domain_id" {}
 variable "monitor_cidr" {}
-variable "eks" {}
+
 
 
