@@ -1,9 +1,9 @@
 env = "prod"
-bastion_cidr = ["172.31.47.250/32"]
-default_vpc_id = "vpc-00ca3af765ccd461b"
+bastion_cidr = ["172.31.46.34/32"]
+default_vpc_id = "vpc-0720427b639d38611"
 default_vpc_cidr = "172.31.0.0/16"
-default_vpc_rtid = "rtb-08bef8c259931766c"
-kms_arn = "arn:aws:kms:us-east-1:132179088792:key/ede7aa6b-ba36-497f-8811-1a4e2b338294"
+default_vpc_rtid = "rtb-0bc0b225ac5a47752"
+kms_arn = "arn:aws:kms:us-east-1:115099330984:key/ff8046c6-0b8f-4fbf-97e9-2c118b28b095"
 domain_name = "rdevopsb72.store"
 domain_id = "Z0321851320OIGMG455PE"
 monitor_cidr = ["172.31.45.213/32"]
