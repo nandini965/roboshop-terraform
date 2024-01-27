@@ -124,46 +124,46 @@ module "vpc" {
 #  domain_id    = var.domain_id
 #}
 
-#module "eks" {
-#  source             = "git::https://github.com/nandini965/tf-module-eks.git"
-#  ENV                = var.env
-#  eks_version        = 1.27
-#  PRIVATE_SUBNET_IDS = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), "app", null), "subnet_ids", null)
-#  PUBLIC_SUBNET_IDS  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), "public", null), "subnet_ids", null)
-#  DESIRED_SIZE       = 2
-#  MAX_SIZE           = 2
-#  MIN_SIZE           = 2
-#  kms_arn            = var.kms_arn
-//}
+module "eks" {
+  source             = "git::https://github.com/nandini965/tf-module-eks.git"
+  ENV                = var.env
+  eks_version        = 1.27
+  PRIVATE_SUBNET_IDS = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), "app", null), "subnet_ids", null)
+  PUBLIC_SUBNET_IDS  = lookup(lookup(lookup(lookup(module.vpc, "main", null), "subnets", null), "public", null), "subnet_ids", null)
+  DESIRED_SIZE       = 2
+  MAX_SIZE           = 2
+  MIN_SIZE           = 2
+  kms_arn            = var.kms_arn
+}
 
 #### Load Runner
-data "aws_ami" "ami" {
-  most_recent = true
-  name_regex  = "Centos-8-DevOps-Practice"
-  owners      = ["973714476881"]
-}
-
-resource "aws_instance" "load" {
-  ami                    = data.aws_ami.ami.id
-  instance_type          = "t3.medium"
-  vpc_security_group_ids = ["sg-02691251d365e72f0"]
-  tags = {
-    Name = "load-runner"
-  }
-}
-resource "null_resource" "load" {
-  provisioner "remote-exec" {
-
-    connection {
-      host     = aws_instance.load.private_ip
-      user     = "root"
-      password = "DevOps321"
-    }
-
-    inline = [
-      "curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/docker/install.sh | bash",
-      "docker pull robotshop/rs-load"
-    ]
+#data "aws_ami" "ami" {
+#  most_recent = true
+#  name_regex  = "Centos-8-DevOps-Practice"
+#  owners      = ["973714476881"]
+#}
+#
+#resource "aws_instance" "load" {
+#  ami                    = data.aws_ami.ami.id
+#  instance_type          = "t3.medium"
+#  vpc_security_group_ids = ["sg-02691251d365e72f0"]
+#  tags = {
+#    Name = "load-runner"
+#  }
+#}
+#resource "null_resource" "load" {
+#  provisioner "remote-exec" {
+#
+#    connection {
+#      host     = aws_instance.load.private_ip
+#      user     = "root"
+#      password = "DevOps321"
+#    }
+#
+#    inline = [
+#      "curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/docker/install.sh | bash",
+#      "docker pull robotshop/rs-load"
+#    ]
 
 
   }
