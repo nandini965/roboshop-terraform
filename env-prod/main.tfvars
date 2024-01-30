@@ -1,5 +1,5 @@
 env = "prod"
-bastion_cidr = ["172.31.36.246/32"]
+bastion_cidr = ["172.31.40.212/32"]
 default_vpc_id = "vpc-0720427b639d38611"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-0bc0b225ac5a47752"
