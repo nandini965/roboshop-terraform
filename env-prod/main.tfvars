@@ -134,7 +134,7 @@ docdb = {
 
  rds = {
   main = {
-    subnet_name = "app"
+    subnet_name = "db"
     allow_db_cidr = "app"
     engine_version = "5.7.mysql_aurora.2.11.2"
     instance_count = 1
